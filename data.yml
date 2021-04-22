@@ -1,0 +1,44 @@
+-
+  test_interface: login
+  describe: 正常登录
+  url: http://api.nlecloud.com/Users/Login
+  method: POST
+  header:
+   Content-Type: application/x-www-form-urlencoded
+  data:
+   Account: '18668102621'
+   Password: '111111'
+   IsRememberMe: True
+
+-
+  test_interface: add_project
+  describe: 新增项目
+  url: http://api.nlecloud.com/Projects
+  method: POST
+  header:
+   Content-Type: application/x-www-form-urlencoded
+   AccessToken: $AccessToken
+  data:
+   Industry: 5
+   NetWorkKind: 2
+   Name: Project_123
+   Remark:
+
+-
+  test_interface: add_device
+  describe: 新增设备
+  url: http://api.nlecloud.com/Devices
+  method: POST
+  header:
+   Content-Type: application/x-www-form-urlencoded
+   AccessToken: $AccessToken
+  data:
+   Protocol: 1
+   IsTrans: True
+   ProjectIdOrTag: $projectId
+   Name: Device12345
+   Tag: Devtag13355
+   Coordinate:
+   DeviceImg:
+   IsShare: True
+
